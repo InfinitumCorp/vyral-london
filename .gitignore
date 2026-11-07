@@ -7,3 +7,4 @@ attachments/
 .DS_Store
 .wrangler
 .dev.vars*
+.output
