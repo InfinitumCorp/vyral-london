@@ -1,6 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import wordmark from "@/assets/wordmark.png";
+import { CumulusBar } from "@/components/cumulus-bar";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -90,7 +91,7 @@ export function SiteHeader({ active }: { active: string | null }) {
         </nav>
 
         <div className="flex items-center gap-3 md:gap-4">
-          <div className="hidden sm:block">
+          <div className="hidden sm:block md:hidden lg:block">
             <LondonClock />
           </div>
           <a
@@ -112,6 +113,8 @@ export function SiteHeader({ active }: { active: string | null }) {
             <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
+          <CumulusBar className="hidden lg:flex" />
+          <CumulusBar className="flex lg:hidden" create={false} />
         </div>
       </div>
 
